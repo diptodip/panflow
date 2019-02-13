@@ -1,0 +1,18 @@
+#!/bin/bash
+
+# To use, pass the name of the .md file without the
+# file extension as an argument:
+#
+#     ./htmlmk <filename>
+#
+# This will produce <filename>.html from <filename>.md
+# with the appropriate styling applied.
+
+# Add a title for the table of contents if desired
+# by setting toctitle to a nonempty string.
+
+# Make sure that the path to the Panflow CSS in
+# panflow.html is appropriately set if panflow.html
+# is in a different folder from the build script.
+
+pandoc -s --toc --number-sections -V toctitle:'' -H panflow.html $1.md -o $1.html
